@@ -1,0 +1,7 @@
+<svg width="35" height="27" viewBox="0 0 35 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="13" width="35" height="1" fill="white"/>
+<rect x="18" width="12" height="1" transform="rotate(90 18 0)" fill="white"/>
+<rect width="12" height="1" transform="matrix(0 -1 -1 0 18 27)" fill="white"/>
+<rect x="19" y="9" width="3" height="3" transform="rotate(90 19 9)" fill="white"/>
+<rect width="3" height="3" transform="matrix(0 -1 -1 0 19 18)" fill="white"/>
+</svg>
