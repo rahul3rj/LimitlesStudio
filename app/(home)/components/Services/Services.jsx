@@ -172,8 +172,8 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="overflow-hidden pt-2">
-                    <p className='pop-text inline-block text-[10px] md:text-xs text-white font-ibm-plex-mono leading-relaxed w-full opacity-40'>
-                        For 25 years, Tripadvisor has been the world's travel companion, with real reviews, real advice, straight from real people. But in a race to compete with booking engines and comparison sites on price and capacity, the brand risked losing its edge. We set out to refocus on what makes Tripadvisor unique: its community of real travelers, and their real reviews.
+                    <p className='pop-text inline-block text-[10px] md:text-xs text-white/40 font-ibm-plex-mono leading-relaxed w-full'>
+                        LimitlesStudio is a boundary-pushing creative powerhouse where digital craftsmanship meets radical innovation. We don't just build platforms; we architect immersive experiences that redefine the intersection of art and technology. Our mission is to elevate disruptive brands through high-fidelity design and state-of-the-art engineering, transforming complex visions into seamless, limitless realities that resonate in a digital-first world.
                     </p>
                 </div>
             </div>
@@ -208,7 +208,7 @@ const Services = () => {
             <div className='w-full md:w-[28%] flex flex-col justify-between h-auto md:h-[80vh] min-h-[50vh] md:min-h-0 relative mb-[10vh] md:mb-0'>
                 
                 {/* Top Right Mini Card */}
-                <div className='flex items-center gap-4 p-3 w-fit md:ml-auto self-start md:self-end relative md:absolute md:top-0 md:left-0 overflow-hidden mb-8 md:mb-0'>
+                {/* <div className='flex items-center gap-4 p-3 w-fit md:ml-auto self-start md:self-end relative md:absolute md:top-0 md:left-0 overflow-hidden mb-8 md:mb-0'>
                     <div className="pop-text flex items-center gap-4">
                         <img src="/bg1.png" alt="Team Cyphers" className='w-10 h-10 rounded-lg object-cover' />
                         <div className='pr-4'>
@@ -216,7 +216,7 @@ const Services = () => {
                             <p className='text-[10px] text-gray-400 font-ibm-plex-mono mt-0.5'>2024, Hack-A-Thon</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Vertical Services Menu */}
                 <div className='flex flex-col gap-2 font-metropolis uppercase font-bold text-lg md:text-[1.7rem] xl:text-3xl tracking-tight mt-auto'>

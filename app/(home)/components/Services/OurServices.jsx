@@ -197,19 +197,19 @@ const OurServices = () => {
           <p className='pop-text text-xs md:text-[1.8vh] font-ibm-plex-mono font-[300]  md:w-[58%] text-center'>CREATIVE STUDIO BUILDS PREMIUM DIGITAL EXPERIENCES.</p>
         </div>
         <div className="overflow-hidden w-full flex justify-center pt-2">
-          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>IT’S NEVER “JUST A WEBSITE.” </h1>
+          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>WE DON’T JUST “BUILD WEBSITES.” </h1>
         </div>
         <div className="overflow-hidden w-full flex justify-center">
-          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>EVERY <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='text-white font-metropolis font-[700] w-[58%] text-center leading-tight tracking-tight underline decoration-2 cursor-pointer relative z-10' style={{ textShadow: isHovering ? "0 0 40px rgba(255,255,255,0.2)" : "none", transition: "text-shadow 0.3s" }}>DETAIL</span> MATTERS.</h1>
+          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>WE CREATE <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='text-white font-metropolis font-[700] w-[58%] text-center leading-tight tracking-tight underline decoration-2 cursor-pointer relative z-10' style={{ textShadow: isHovering ? "0 0 40px rgba(255,255,255,0.2)" : "none", transition: "text-shadow 0.3s" }}>DIGITAL</span> EXPERIENCES.</h1>
         </div>
         <div className="overflow-hidden w-full flex justify-center">
-          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>WE CRAFT DIGITAL EXPERIENCES.</h1>
+          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'> BUILT TO IMPRESS.</h1>
         </div>
         <div className="overflow-hidden w-full flex justify-center">
-          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>YOUR DESIGN. OUR OBSESSION.</h1>
+          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>DESIGNED TO PERFORM.</h1>
         </div>
         <div className="overflow-hidden w-full flex justify-center">
-          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>YOUR BRAND. OUR <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='text-white font-metropolis font-[700] w-[58%] text-center leading-tight tracking-tight underline decoration-2 mix-blend-difference cursor-pointer relative z-10' style={{ textShadow: isHovering ? "0 0 40px rgba(255,255,255,0.2)" : "none", transition: "text-shadow 0.3s" }}>PLAYGROUND</span>.</h1>
+          <h1 className='pop-text text-3xl md:text-5xl font-metropolis font-[700] md:w-[58%] text-center leading-tight tracking-tight'>CRAFTED TO BE <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='text-white font-metropolis font-[700] w-[58%] text-center leading-tight tracking-tight underline decoration-2 mix-blend-difference cursor-pointer relative z-10' style={{ textShadow: isHovering ? "0 0 40px rgba(255,255,255,0.2)" : "none", transition: "text-shadow 0.3s" }}>REMEMBERED</span>.</h1>
         </div>
       </div>
     </div>

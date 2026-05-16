@@ -6,12 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
-    { title: "Project Alpha", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
-    { title: "Project Beta", image: "/w2.png", description: "A bold experiment in grid-breaking layouts, focusing on high-contrast colors and kinetic typography." },
-    { title: "LimitlesStudio", image: "/bg.png", description: "Our flagship showcase, pushing the boundaries of WebGL and raw GSAP animations in the browser." },
+    { title: "Limitless Studio", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
+    { title: "Game pre-release experience", image: "/w2.png", description: "A bold experiment in grid-breaking layouts, focusing on high-contrast colors and kinetic typography." },
+    { title: "Silkroad", image: "/bg.png", description: "Our flagship showcase, pushing the boundaries of WebGL and raw GSAP animations in the browser." },
     { title: "Project Delta", image: "/w4.png", description: "A dark-themed architectural portfolio designed to feel like exploring an endless, brutalist megastructure." },
     { title: "Project Echo", image: "/w5.png", description: "An e-commerce experience redefined. Distorted aesthetics meet seamless transactional workflows." },
-    { title: "Project Alpha", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
+    { title: "Limitless Studio", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
     { title: "Project Beta", image: "/w2.png", description: "A bold experiment in grid-breaking layouts, focusing on high-contrast colors and kinetic typography." },
     { title: "LimitlesStudio", image: "/bg.png", description: "Our flagship showcase, pushing the boundaries of WebGL and raw GSAP animations in the browser." },
     { title: "Project Delta", image: "/w4.png", description: "A dark-themed architectural portfolio designed to feel like exploring an endless, brutalist megastructure." },
