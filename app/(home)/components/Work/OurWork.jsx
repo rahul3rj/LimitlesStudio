@@ -6,13 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
-    { title: "Limitless Studio", image: "/s1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
-    { title: "Game pre-release experience", image: "/s2.png", description: "Developed for the Skillvarz Hackathon Round 1, showcasing immersive visuals, smooth interactions, and modern web creativity." },
-    { title: "Silkroad", image: "/s3.png", description: "SilkRoad is a premium fashion marketplace built to bring curated streetwear and modern clothing brands into one sleek shopping experience." },
-    { title: "Cyphers", image: "/s4.png", description: "Built for the final round, delivering a premium futuristic experience with cinematic animations and immersive storytelling-driven design." },
-    { title: "Ochi Clone", image: "/s5.png", description: "A modern clone of Ochi Design featuring smooth animations, bold typography, and immersive interactive storytelling." },
-    { title: "Bennet Clone", image: "/s6.png", description: "A sleek modern web experience showcasing creative design, smooth animations, and immersive user interactions." },
-    { title: "Marshall Reimagined", image: "/s7.png", description: "Built for the Skillvarz Hackathon Round 2, blending futuristic UI, immersive animations, and seamless interactive web experiences. " }
+    { title: "Limitless Studio", image: "/s1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism.", link: "https://limitles-studio.vercel.app/" },
+    { title: "Game pre-release experience", image: "/s2.png", description: "Developed for the Skillvarz Hackathon Round 1, showcasing immersive visuals, smooth interactions, and modern web creativity.", link: "https://skillvarz-team-cyphers.vercel.app/" },
+    { title: "Silkroad", image: "/s3.png", description: "SilkRoad is a premium fashion marketplace built to bring curated streetwear and modern clothing brands into one sleek shopping experience.", link: "https://silkroad-project.vercel.app/" },
+    { title: "Cyphers", image: "/s4.png", description: "Built for the final round, delivering a premium futuristic experience with cinematic animations and immersive storytelling-driven design.", link: "https://cyphers-final-round.vercel.app/" },
+    { title: "Ochi Clone", image: "/s5.png", description: "A modern clone of Ochi Design featuring smooth animations, bold typography, and immersive interactive storytelling.", link: "https://ochi-design-psi.vercel.app/" },
+    { title: "Bennet Clone", image: "/s6.png", description: "A sleek modern web experience showcasing creative design, smooth animations, and immersive user interactions.", link: "https://bennet-eight.vercel.app/" },
+    { title: "Marshall Reimagined", image: "/s7.png", description: "Built for the Skillvarz Hackathon Round 2, blending futuristic UI, immersive animations, and seamless interactive web experiences. ", link: "https://skillvarz-round2-cyphers-ns9j.vercel.app/" }
 ];
 
 const ScrambleText = ({ text, speed = 1/3 }) => {
@@ -120,8 +120,48 @@ const OurWork = () => {
     const lastWheelTime = useRef(Date.now());
     const [isMobile, setIsMobile] = useState(false);
 
+    const cursorRef = useRef(null);
+    const [cursorVisible, setCursorVisible] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
+
     let projIndex = activeIndex % projects.length;
     if (projIndex < 0) projIndex += projects.length;
+
+    useEffect(() => {
+        const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        setIsTouchDevice(isTouch);
+    }, []);
+
+    useEffect(() => {
+        if (isTouchDevice) return;
+        setCursorVisible(isHovering);
+        if (isHovering) {
+            document.body.classList.add('hide-global-cursor');
+        } else {
+            document.body.classList.remove('hide-global-cursor');
+        }
+
+        return () => document.body.classList.remove('hide-global-cursor');
+    }, [isHovering, isTouchDevice]);
+
+    useEffect(() => {
+        if (isTouchDevice) return;
+        const cursor = cursorRef.current;
+        if (!cursor) return;
+
+        const moveCursor = (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.3,
+                ease: 'power2.out',
+            });
+        };
+
+        window.addEventListener('mousemove', moveCursor);
+        return () => window.removeEventListener('mousemove', moveCursor);
+    }, [isTouchDevice]);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -214,7 +254,20 @@ const OurWork = () => {
                     <img src="/Bracket.svg" className='absolute bottom-0 left-0 w-8 h-8 z-10 opacity-60 -rotate-180 translate-x-3 -translate-y-3' alt="bracket" />
                     
                     <div className="overflow-hidden w-full h-full rounded-2xl p-2">
-                        <div className='pop-text w-full h-full rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]'>
+                        <div 
+                            className='pop-text w-full h-full rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] cursor-pointer md:cursor-none'
+                            onMouseEnter={() => setIsHovering(true)}
+                            onMouseLeave={() => setIsHovering(false)}
+                            onClick={() => {
+                                const link = projects[projIndex].link;
+                                if (link && link !== '#') {
+                                    window.open(link, '_blank', 'noopener,noreferrer');
+                                } else {
+                                    // Optional: behavior if no link is set yet
+                                    console.log('No link configured for', projects[projIndex].title);
+                                }
+                            }}
+                        >
                             <GlitchImage src={projects[projIndex].image} />
                         </div>
                     </div>
@@ -284,6 +337,32 @@ const OurWork = () => {
             </div>
 
             </div>
+
+            {/* Custom Cursor */}
+            {!isTouchDevice && (
+                <div
+                    ref={cursorRef}
+                    className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
+                    style={{
+                        opacity: cursorVisible ? 1 : 0,
+                        transition: "opacity 0.2s ease",
+                    }}
+                >
+                    <div className="relative -translate-x-1/2 -translate-y-1/2 flex items-center gap-2">
+                        <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-transparent border border-white flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                        <span
+                            className="text-[8px] sm:text-[10px] font-medium tracking-[0.2em] uppercase text-white"
+                            style={{ fontFamily: "var(--font-metropolis), sans-serif" }}
+                        >
+                            EXPERIENCE
+                        </span>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
