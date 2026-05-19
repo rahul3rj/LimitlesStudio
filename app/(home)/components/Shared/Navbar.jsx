@@ -242,18 +242,37 @@ const Navbar = () => {
           ref={navRef}
           className="absolute top-10 right-10 xl:top-12 xl:right-14 2xl:top-14 2xl:right-16 pointer-events-auto flex flex-col text-right text-[10px] xl:text-[11px] tracking-[0.2em] gap-3 xl:gap-4"
         >
-          {["WORK", "PROCESS", "STUDIO", "CONTACT"].map((item, idx) => (
+          {[
+            { name: "HOME", selector: "top" },
+            { name: "SERVICES", selector: ".workwedo-section" },
+            { name: "WORK", selector: ".work-section" },
+            { name: "CONTACT US", selector: ".footer-section" }
+          ].map((item, idx) => (
             <a
               key={idx}
               href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (item.selector === "top") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  const el = document.querySelector(item.selector);
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  }
+                }
+                if (isMenuOpen.current) {
+                  toggleMenu();
+                }
+              }}
               data-cursor="nav"
               className="relative group overflow-hidden cursor-none block"
             >
               <span className="block transition-all duration-300 group-hover:translate-y-[-100%]">
-                {item}
+                {item.name}
               </span>
               <span className="absolute top-0 left-0 w-full text-right transition-all duration-300 translate-y-full group-hover:translate-y-0">
-                {item}
+                {item.name}
               </span>
             </a>
           ))}

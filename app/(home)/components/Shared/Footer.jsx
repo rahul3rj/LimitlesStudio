@@ -163,10 +163,10 @@ const Footer = () => {
                 <div className='flex gap-20 lg:gap-32 w-[10vw]'>
                     {/* Column 2: Socials & Legal */}
                     <div className='flex flex-col gap-1 text-sm font-ibm-plex-mono tracking-[0.1em] text-white/70'>
-                        <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">YouTube</HoverLink></div></div>
-                        <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">LinkedIn</HoverLink></div></div>
+                        <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">Dribble</HoverLink></div></div>
                         <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">Instagram</HoverLink></div></div>
-                        <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">Legal</HoverLink></div></div>
+                        <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">LinkedIn</HoverLink></div></div>
+                        {/* <div className="overflow-hidden pb-1"><div className="pop-text inline-block"><HoverLink href="#">Legal</HoverLink></div></div> */}
                     </div>
 
                 </div>
@@ -176,7 +176,7 @@ const Footer = () => {
                     <div className="overflow-hidden pb-1"><p className="pop-text inline-block">We are a creative studio based in India.</p></div>
                     <div className="overflow-hidden pb-1"><p className="pop-text inline-block">Work with us if average isn't your thing. Drop it, we'll build it!</p></div>
                     <div className="overflow-hidden pt-1 pb-1">
-                        <a href="#" className='pop-text inline-flex items-center gap-1.5 italic text-white hover:opacity-70 transition-opacity w-fit mt-2'>
+                        <a href="https://cal.com/limitlesstudio-xbgeew/client-talk" className='pop-text inline-flex items-center gap-1.5 italic text-white hover:opacity-70 transition-opacity w-fit mt-2'>
                             Let's Talk
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="7" y1="17" x2="17" y2="7"></line>

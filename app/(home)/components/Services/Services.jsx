@@ -17,13 +17,13 @@ const servicesList = [
 ];
 
 const serviceImages = {
-  "BRANDING": "/w1.png",
-  "WEB DEVELOPMENT": "/w2.png",
-  "APP DEVELOPMENT": "/w3.png",
-  "AI AUTOMATION": "/w4.png",
-  "GRAPHIC DESIGNING": "/w5.png",
-  "UI/UX DESIGN": "/w6.png",
-  "VIDEO EDITING": "/w7.png"
+  "BRANDING": "/m1.png",
+  "WEB DEVELOPMENT": "/m2.png",
+  "APP DEVELOPMENT": "/m3.png",
+  "AI AUTOMATION": "/m4.png",
+  "GRAPHIC DESIGNING": "/m5.png",
+  "UI/UX DESIGN": "/m6.png",
+  "VIDEO EDITING": "/m7.png"
 };
 
 const ScrambleText = ({ text }) => {

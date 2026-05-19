@@ -6,16 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
-    { title: "Limitless Studio", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
-    { title: "Game pre-release experience", image: "/w2.png", description: "A bold experiment in grid-breaking layouts, focusing on high-contrast colors and kinetic typography." },
-    { title: "Silkroad", image: "/bg.png", description: "Our flagship showcase, pushing the boundaries of WebGL and raw GSAP animations in the browser." },
-    { title: "Project Delta", image: "/w4.png", description: "A dark-themed architectural portfolio designed to feel like exploring an endless, brutalist megastructure." },
-    { title: "Project Echo", image: "/w5.png", description: "An e-commerce experience redefined. Distorted aesthetics meet seamless transactional workflows." },
-    { title: "Limitless Studio", image: "/w1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
-    { title: "Project Beta", image: "/w2.png", description: "A bold experiment in grid-breaking layouts, focusing on high-contrast colors and kinetic typography." },
-    { title: "LimitlesStudio", image: "/bg.png", description: "Our flagship showcase, pushing the boundaries of WebGL and raw GSAP animations in the browser." },
-    { title: "Project Delta", image: "/w4.png", description: "A dark-themed architectural portfolio designed to feel like exploring an endless, brutalist megastructure." },
-    { title: "Project Echo", image: "/w5.png", description: "An e-commerce experience redefined. Distorted aesthetics meet seamless transactional workflows." }
+    { title: "Limitless Studio", image: "/s1.png", description: "Pioneering the future of digital interaction through an intricate blend of sleek UI and aggressive brutalism." },
+    { title: "Game pre-release experience", image: "/s2.png", description: "Developed for the Skillvarz Hackathon Round 1, showcasing immersive visuals, smooth interactions, and modern web creativity." },
+    { title: "Silkroad", image: "/s3.png", description: "SilkRoad is a premium fashion marketplace built to bring curated streetwear and modern clothing brands into one sleek shopping experience." },
+    { title: "Cyphers", image: "/s4.png", description: "Built for the final round, delivering a premium futuristic experience with cinematic animations and immersive storytelling-driven design." },
+    { title: "Ochi Clone", image: "/s5.png", description: "A modern clone of Ochi Design featuring smooth animations, bold typography, and immersive interactive storytelling." },
+    { title: "Bennet Clone", image: "/s6.png", description: "A sleek modern web experience showcasing creative design, smooth animations, and immersive user interactions." },
+    { title: "Marshall Reimagined", image: "/s7.png", description: "Built for the Skillvarz Hackathon Round 2, blending futuristic UI, immersive animations, and seamless interactive web experiences. " }
 ];
 
 const ScrambleText = ({ text, speed = 1/3 }) => {

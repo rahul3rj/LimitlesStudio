@@ -6,10 +6,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const POPUP_IMAGES = [
-  { src: "/f1.png", width: "15vw", height: "40vh", transform: "scale(0.85) translateY(120px)" },
-  { src: "/f2.png", width: "20vw", height: "26vh", transform: "scale(0.85) translateY(120px)" },
-  { src: "/f3.png", width: "16vw", height: "45vh", transform: "scale(0.85) translateY(120px)" },
-  { src: "/f4.png", width: "18vw", height: "28vh", transform: "scale(0.85) translateY(120px)" },
+  { src: "/m2.png", width: "15vw", height: "40vh", transform: "scale(0.85) translateY(120px)" },
+  { src: "/s2.png", width: "24vw", height: "26vh", transform: "scale(0.85) translateY(120px)" },
+  { src: "/m6.png", width: "16vw", height: "45vh", transform: "scale(0.85) translateY(120px)" },
+  { src: "/s3.png", width: "24vw", height: "28vh", transform: "scale(0.85) translateY(120px)" },
 ];
 
 const OurServices = () => {
