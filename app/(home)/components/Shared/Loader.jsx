@@ -36,7 +36,7 @@ const Loader = ({ onComplete }) => {
         // 2. Count up to 100%
         tl.to({ val: 0 }, {
             val: 100,
-            duration: 3,
+            duration: 5,
             ease: "power2.inOut",
             onUpdate: function() {
                 setProgress(Math.round(this.targets()[0].val));
@@ -46,7 +46,7 @@ const Loader = ({ onComplete }) => {
         // 3. Expand the lines, pushing the text outwards
         tl.to([leftLineRef.current, rightLineRef.current], {
             width: '100%',
-            duration: 2.5,
+            duration: 4.5,
             ease: "power3.inOut"
         }, 0.5);
 
@@ -56,25 +56,25 @@ const Loader = ({ onComplete }) => {
             scale: 20,
             opacity: 0,
             filter: "blur(20px)",
-            duration: 1.2,
+            duration: 1.5,
             ease: "power4.in"
-        }, 3.2);
+        }, 5.2);
 
         // Fade out the surrounding elements (lines, text, brackets)
         tl.to([leftLineRef.current, rightLineRef.current, centerBoxRef.current], {
             opacity: 0,
             duration: 0.5,
             ease: "power2.out"
-        }, 3.2);
+        }, 5.2);
 
         // Sweep the black container UP to reveal the site
         tl.to(containerRef.current, {
             yPercent: -100,
-            duration: 1.2,
+            duration: 1.5,
             ease: "power4.inOut",
             borderBottomLeftRadius: "100%",
             borderBottomRightRadius: "100%",
-        }, 3.5);
+        }, 5.5);
 
         return () => {
             document.body.style.overflow = '';
