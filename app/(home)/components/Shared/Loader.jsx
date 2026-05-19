@@ -9,6 +9,7 @@ const Loader = ({ onComplete }) => {
     const rightLineRef = useRef(null);
     const numberRef = useRef(null);
     const [progress, setProgress] = useState(0);
+    const imagesLoadedRef = useRef(false);
 
     useEffect(() => {
         // Prevent scrolling while loading
@@ -19,6 +20,29 @@ const Loader = ({ onComplete }) => {
                 // Unlock scrolling
                 document.body.style.overflow = '';
                 if (onComplete) onComplete();
+            }
+        });
+
+        // Preload critical images to prevent blank screens after loader
+        const imageUrls = [
+            '/bg.png', 
+            '/bg1.png',
+            '/m1.png',
+            '/s1.png'
+        ];
+        
+        Promise.all(imageUrls.map(src => {
+            return new Promise(resolve => {
+                const img = new window.Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve; // Resolve on error to prevent infinite loading
+            });
+        })).then(() => {
+            imagesLoadedRef.current = true;
+            if (tl.paused()) {
+                setProgress(100);
+                tl.play();
             }
         });
 
@@ -33,9 +57,9 @@ const Loader = ({ onComplete }) => {
             ease: "power3.out"
         }, 0);
 
-        // 2. Count up to 100%
+        // 2. Count up to 99% (wait for images before hitting 100%)
         tl.to({ val: 0 }, {
-            val: 100,
+            val: 99,
             duration: 5,
             ease: "power2.inOut",
             onUpdate: function() {
@@ -49,6 +73,15 @@ const Loader = ({ onComplete }) => {
             duration: 4.5,
             ease: "power3.inOut"
         }, 0.5);
+
+        // Pause timeline right before exit if images are still loading
+        tl.add(() => {
+            if (!imagesLoadedRef.current) {
+                tl.pause();
+            } else {
+                setProgress(100);
+            }
+        }, 5.1);
 
         // 4. Awwwards level exit sequence
         // Scale up the percentage text massively and fade out

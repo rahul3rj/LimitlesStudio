@@ -269,7 +269,7 @@ const Hero = () => {
             {/* ── Layer 1: Global Background Image (360vh tall, overflowing) ── */}
             <div className="absolute top-0 left-0 w-full h-[360vh] -z-10 flex items-center justify-center">
                 <img
-                    src="/bg.png"
+                    src="/bg.webp"
                     alt=""
                     className="w-full h-[360vh] md:h-full object-cover md:object-[0px_4.2%] block scale-[1.07] blur-[5px] brightness-[0.92]"
                 />
